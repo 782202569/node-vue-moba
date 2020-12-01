@@ -1,6 +1,6 @@
 import Vue from "vue"
 import VueRouter from "vue-router"
-//mport Home from "../views/Home.vue";
+import Login from "../views/login.vue"
 import Main from "../views/Main.vue"
 // 分类
 import CategoryEdit from "../views/CategoryEdit.vue"
@@ -17,10 +17,20 @@ import ArticleList from "../views/ArticlesList.vue"
 // 广告位
 import AdEdit from "../views/AdEdit.vue"
 import AdList from "../views/AdList.vue"
+// 管理员
+import AdminUserEdit from "../views/AdminUserEdit.vue"
+import AdminUserList from "../views/AdminUserList.vue"
+
 Vue.use(VueRouter)
 
 const router = new VueRouter({
   routes: [
+    {
+      path: "/login",
+      name: "login",
+      component: Login,
+      meta: { isPublic: true },
+    },
     {
       path: "/",
       name: "main",
@@ -95,9 +105,28 @@ const router = new VueRouter({
           component: AdEdit,
           props: true,
         },
+
+        {
+          path: "/admin_users/create",
+          component: AdminUserEdit,
+        },
+        {
+          path: "/admin_users/list",
+          component: AdminUserList,
+        },
+        {
+          path: "/admin_users/edit/:id",
+          component: AdminUserEdit,
+          props: true,
+        },
       ],
     },
   ],
 })
-
+router.beforeEach((to, from, next) => {
+  if (!to.meta.isPublic && !localStorage.token) {
+    return next("/login")
+  }
+  next()
+})
 export default router
