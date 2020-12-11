@@ -1,0 +1,65 @@
+// colors
+
+$colors: (
+  "primary": #db9e3f,
+  "white": #fff,
+  "info": #4b67af,
+  "black": #000,
+  "dark": #222,
+  "grey-1": #666,
+  "grey": #999,
+  "light": #f9f9f9,
+  "dark-1": #333,
+);
+
+// font size
+$base-font-size: 1rem;
+$font-sizes: (
+  xxs: 0.6154,
+  xs: 0.7692,
+  // 10px
+    sm: 0.9231,
+  // 12px
+    md: 1,
+  // 13px
+    lg: 1.0769,
+  // 14px
+    xl: 1.2308,
+);
+
+$flex-jc: (
+  start: flex-start,
+  end: flex-end,
+  center: center,
+  between: space-between,
+  around: space-around,
+);
+
+$flex-ai: (
+  start: flex-start,
+  end: flex-end,
+  center: center,
+  stretch: stretch,
+);
+
+// spacing
+// .mt-1 => margin top
+$spacing-types: (
+  m: margin,
+  p: padding,
+);
+$space-directions: (
+  t: top,
+  r: right,
+  b: bottom,
+  l: left,
+);
+$spacing-base-size: 1rem;
+$spacing-sizes: (
+  0: 0,
+  1: 0.25,
+  2: 0.5,
+  3: 1,
+  4: 1.5,
+  5: 3,
+);
