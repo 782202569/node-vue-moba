@@ -1,17 +1,18 @@
 // colors
 
 $colors: (
-  "primary": #db9e3f,
-  "white": #fff,
-  "info": #4b67af,
-  "black": #000,
-  "dark": #222,
-  "grey-1": #666,
-  "grey": #999,
-  "light": #f9f9f9,
-  "dark-1": #333,
+  'primary': #db9e3f,
+  'white': #fff,
+  'info': #4b67af,
+  'black': #000,
+  'dark': #222,
+  'grey-1': #666,
+  'grey': #999,
+  'light': #f9f9f9,
+  'light-1': #d4d9de,
+  'dark-1': #333,
 );
-
+$border-color: map-get($colors, 'light-1');
 // font size
 $base-font-size: 1rem;
 $font-sizes: (

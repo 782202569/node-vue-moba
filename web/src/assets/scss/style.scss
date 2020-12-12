@@ -1,4 +1,4 @@
-@import "./variables";
+@import './variables';
 * {
   box-sizing: border-box;
   outline: none;
@@ -61,6 +61,10 @@ a {
   flex-direction: column;
 }
 
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
 @each $key, $value in $flex-jc {
   .jc-#{$key} {
     justify-content: $value;
@@ -113,7 +117,7 @@ a {
 .btn {
   border: none;
   border-radius: 0.1538rem;
-  font-size: map-get($font-sizes, "sm") * $base-font-size;
+  font-size: map-get($font-sizes, 'sm') * $base-font-size;
   padding: 0.2rem 0.6rem;
 }
 
@@ -126,5 +130,23 @@ a {
     &.active {
       border-bottom: 3px solid #fff;
     }
+  }
+}
+
+// sprite
+
+.sprite {
+  background: url(../images/index.png) no-repeat 0 0;
+  background-size: 28.8462rem;
+  display: inline-block;
+  &.sprite-news {
+    width: 1.7692rem;
+    height: 1.5385rem;
+    background-position: 63.546% 15.517%;
+  }
+  &.sprite-arrow {
+    width: 0.7692rem;
+    height: 0.7692rem;
+    background-position: 38.577% 52.076%;
   }
 }
