@@ -12,7 +12,8 @@ import 'swiper/swiper-bundle.css'
 Vue.use(VueAwesomeSwiper)
 
 Vue.prototype.$http = axios.create({
-  baseURL: 'http://localhost:3000/web/api',
+  baseURL: process.env.VUE_APP_API_URL || '/web/api',
+  // baseURL: 'http://localhost:3000/web/api',
 })
 
 Vue.config.productionTip = false
