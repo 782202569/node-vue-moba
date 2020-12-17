@@ -57,14 +57,25 @@ module.exports = (app) => {
   )
 
   const multer = require("multer")
-  const upload = multer({ dest: __dirname + "/../../uploads" })
+  const MAO = require("multer-aliyun-oss")
+  // const upload = multer({ dest: __dirname + "/../../uploads" }) // 本地开发之前用的
+  const upload = multer({
+    storage: MAO({
+      config: {
+        region: "oss-cn-beijing",
+        accessKeyId: "LTAI4GFSqtfhrWxWC4aBSPym",
+        accessKeySecret: "tibpxXMyGs0cztMR4YRm7zs0PIoIUv",
+        bucket: "node-vue-create",
+      },
+    }),
+  })
   app.post(
     "/admin/api/upload",
     authMiddleware(),
     upload.single("file"),
     async (req, res) => {
       const file = req.file
-      file.url = `http://test.glove-test.top/uploads/${file.filename}`
+      // file.url = `http://test.glove-test.top/uploads/${file.filename}`
       res.send(file)
     }
   )
